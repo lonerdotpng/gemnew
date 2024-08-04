@@ -6,6 +6,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buttons with Custom Styles</title>
     <style>
+        /* From Uiverse.io by SelfMadeSystem */
+        /* Yoinked from CodePen, but improved the animation
+        so that it is smooth among other more minor things */
+
+       .wrapper {
+  height: 100vh;
+  /*This part is important for centering*/
+  display: grid;
+  place-items: center;
+  
+}
+
+.typing-demo {
+  width: 11ch;
+  animation: typing 1s steps(39), blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-family: monospace;
+  font-size: 3em;
+  right: 500px;
+  color:   rgb(91 33 182);
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+}
+    
+@keyframes blink {
+  50% {
+    border-color: transparent
+  }
+}
+.codepen-button {
+            display: inline-block; /* Set display to inline-block */
+            cursor: pointer;
+            color: white;
+            margin: 20px auto; /* Add margin for spacing */
+            position: fixed;
+            top: 350px;
+            right: 580px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 6px;
+            overflow: hidden;
+            padding: 6px;
+            isolation: isolate;
+            min-width: 200px; /* Set a minimum width */
+        }
+
+        .codepen-button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 400%;
+            height: 400%;
+            background: linear-gradient(115deg, #4fcf70, #fad648, #a767e5, #12bcfe, #44ce7b);
+            background-size: 25% 10%;
+            animation: button-animation .75s linear infinite;
+            animation-play-state: paused;
+            transform: translateX(-5%);
+            transition: transform 0.25s ease-out;
+        }
+
+        .codepen-button:hover::before {
+            animation-play-state: running;
+            transition-duration: 0.75s;
+            transform: translateX(0%);
+        }
+
+        @keyframes button-animation {
+            to {
+                transform: translateX(-25%);
+            }
+        }
+
+        .codepen-button span {
+            position: relative;
+            display: block;
+            padding: 1rem 1.5rem;
+            font-size: 1.1rem;
+            background: #000;
+            border-radius: 3px;
+            height: 400%;
+            text-align: center; /* Center the text */
+        }
+
         body {
             margin: 0;
             padding: 0;
@@ -17,8 +107,6 @@
             flex-direction: column;
             z-index: 2;
         }
-        
-        
 
         .container {
             width: 100%;
@@ -31,13 +119,11 @@
             z-index: 1;
         }
 
-        lol {
-            left: 630px;
-            top: 280px;
+        .lol {
             color: green;
             z-index: 100;
             position: relative;
-            
+            text-align: center; /* Center the text */
         }
 
         .hamburger {
@@ -188,11 +274,13 @@
 </head>
 <body>
 <div class="container">
+    <div class="wrapper">
+    <div class="typing-demo">
+       Hi! WELCOME
+    </div>
+</div> 
+    <a class="codepen-button"><span>Start Coding</span></a>
 
-   <h1> <lol><i><b>WELCOME!</b></i></lol></h1> 
-<a class="codepen-button"><span>Start Coding</span></a>
-
-    
     <!-- Hamburger Menu -->
     <label class="hamburger">
         <input type="checkbox" id="hamburger-toggle">
@@ -223,17 +311,18 @@
             </svg>
         </button>
     </div>
-    </div>
+</div>
 
-    <script>
-        document.getElementById('hamburger-toggle').addEventListener('change', function() {
-            const dashboardContent = document.getElementById('dashboard-content');
-            if (this.checked) {
-                dashboardContent.classList.add('visible');
-            } else {
-                dashboardContent.classList.remove('visible');
-            }
-        });
-    </script>
+<script>
+    document.getElementById('hamburger-toggle').addEventListener('change', function() {
+        const dashboardContent = document.getElementById('dashboard-content');
+        if (this.checked) {
+            dashboardContent.classList.add('visible');
+        } else {
+            dashboardContent.classList.remove('visible');
+        }
+    });
+</script>
 </body>
 </html>
+
