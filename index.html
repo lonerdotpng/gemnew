@@ -11,44 +11,42 @@
         so that it is smooth among other more minor things */
 
        .wrapper {
-  height: 100vh;
-  /*This part is important for centering*/
-  display: grid;
-  place-items: center;
-  
-}
+            height: 100vh;
+            /*This part is important for centering*/
+            display: grid;
+            place-items: center;
+        }
 
-.typing-demo {
-  width: 11ch;
-  animation: typing 1s steps(39), blink .5s step-end infinite alternate;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 3px solid;
-  font-family: monospace;
-  font-size: 3em;
-  right: 500px;
-  color:   rgb(91 33 182);
-}
+        .typing-demo {
+            width: 11ch;
+            animation: typing 1s steps(39), blink .5s step-end infinite alternate;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid;
+            font-family: monospace;
+            font-size: 3em;
+            right: 900px;
+            top: 500px;
+            color: rgb(91 33 182);
+        }
 
-@keyframes typing {
-  from {
-    width: 0
-  }
-}
-    
-@keyframes blink {
-  50% {
-    border-color: transparent
-  }
-}
-.codepen-button {
+        @keyframes typing {
+            from {
+                width: 0
+            }
+        }
+
+        @keyframes blink {
+            50% {
+                border-color: transparent
+            }
+        }
+
+        .codepen-button {
             display: inline-block; /* Set display to inline-block */
             cursor: pointer;
             color: white;
             margin: 20px auto; /* Add margin for spacing */
-            position: fixed;
-            top: 350px;
-            right: 580px;
             text-decoration: none;
             font-weight: 600;
             border-radius: 6px;
@@ -56,6 +54,7 @@
             padding: 6px;
             isolation: isolate;
             min-width: 200px; /* Set a minimum width */
+            position: relative; /* Use relative positioning */
         }
 
         .codepen-button::before {
@@ -275,42 +274,42 @@
 <body>
 <div class="container">
     <div class="wrapper">
-    <div class="typing-demo">
-       Hi! WELCOME
-    </div>
-</div> 
-    <a class="codepen-button"><span>Start Coding</span></a>
+        <div class="typing-demo">
+            Hi! WELCOME
+        </div>
+        <a class="codepen-button"><span>Start Coding</span></a>
+    </div> 
+</div>
 
-    <!-- Hamburger Menu -->
-    <label class="hamburger">
-        <input type="checkbox" id="hamburger-toggle">
-        <svg viewBox="0 0 32 32">
-            <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
-            <path class="line" d="M7 16 27 16"></path>
+<!-- Hamburger Menu -->
+<label class="hamburger">
+    <input type="checkbox" id="hamburger-toggle">
+    <svg viewBox="0 0 32 32">
+        <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+        <path class="line" d="M7 16 27 16"></path>
+    </svg>
+</label>
+
+<!-- Dashboard Header -->
+<div class="dashboard-header">
+    <h1>codx</h1>
+</div>
+
+<!-- Dashboard Content -->
+<div class="dashboard-content" id="dashboard-content">
+    <h2>Dashboard</h2>
+    <p>This is the dashboard content. You can add more elements here.</p>
+</div>
+
+<!-- Back to Top Button -->
+<div class="button-top">
+    <button class="button">
+        <svg class="svgIcon" viewBox="0 0 384 512">
+            <path
+                d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
+            ></path>
         </svg>
-    </label>
-
-    <!-- Dashboard Header -->
-    <div class="dashboard-header">
-        <h1>codx</h1>
-    </div>
-
-    <!-- Dashboard Content -->
-    <div class="dashboard-content" id="dashboard-content">
-        <h2>Dashboard</h2>
-        <p>This is the dashboard content. You can add more elements here.</p>
-    </div>
-
-    <!-- Back to Top Button -->
-    <div class="button-top">
-        <button class="button">
-            <svg class="svgIcon" viewBox="0 0 384 512">
-                <path
-                    d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
-                ></path>
-            </svg>
-        </button>
-    </div>
+    </button>
 </div>
 
 <script>
@@ -325,4 +324,3 @@
 </script>
 </body>
 </html>
-
