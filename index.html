@@ -10,8 +10,9 @@
         /* Yoinked from CodePen, but improved the animation
         so that it is smooth among other more minor things */
 
-        .wrapper {
-            min-height: calc(100vh - 60px); /* Adjusted for footer height */
+       .wrapper {
+            height: 100vh;
+            /*This part is important for centering*/
             display: grid;
             place-items: center;
         }
@@ -24,7 +25,8 @@
             border-right: 3px solid;
             font-family: monospace;
             font-size: 3em;
-            right: 500px;
+            right: 900px;
+            top: 500px;
             color: rgb(91 33 182);
         }
 
@@ -41,18 +43,18 @@
         }
 
         .codepen-button {
-            display: inline-block;
+            display: inline-block; /* Set display to inline-block */
             cursor: pointer;
             color: white;
-            margin: 20px auto;
+            margin: 20px auto; /* Add margin for spacing */
             text-decoration: none;
             font-weight: 600;
             border-radius: 6px;
             overflow: hidden;
             padding: 6px;
             isolation: isolate;
-            min-width: 200px;
-            position: relative;
+            min-width: 200px; /* Set a minimum width */
+            position: relative; /* Use relative positioning */
         }
 
         .codepen-button::before {
@@ -90,38 +92,37 @@
             background: #000;
             border-radius: 3px;
             height: 400%;
-            text-align: center;
+            text-align: center; /* Center the text */
         }
 
         body {
             margin: 0;
             padding: 0;
             background-color: #485453;
-            min-height: 100vh;
+            height: 100vh;
             display: flex;
+            align-items: center;
+            justify-content: center;
             flex-direction: column;
             z-index: 2;
         }
 
         .container {
-            flex-grow: 1;
             width: 100%;
+            height: 100%;
             --color: rgba(114, 114, 114, 0.3);
             background-color: #191a1a;
             background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent),
             linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent);
             background-size: 55px 55px;
             z-index: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
         }
 
         .lol {
             color: green;
             z-index: 100;
             position: relative;
-            text-align: center;
+            text-align: center; /* Center the text */
         }
 
         .hamburger {
@@ -268,36 +269,6 @@
             bottom: unset;
             transition-duration: 0.3s;
         }
-
-        footer {
-            width: 100%;
-            background-color: #282936;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            box-sizing: border-box;
-            margin-top: auto; /* Pushes the footer to the bottom of the content */
-        }
-
-        footer .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            box-sizing: border-box;
-        }
-
-        footer .footer-content .copyright,
-        footer .footer-content .about {
-            flex: 1;
-        }
-
-        footer .footer-content .about {
-            text-align: right;
-        }
-
     </style>
 </head>
 <body>
@@ -306,52 +277,41 @@
         <div class="typing-demo">
             Hi! WELCOME
         </div>
-        <a href="https://codepen.io/ParthPatel27/pen/rNaMOwV" target="_blank" class="codepen-button">
+    <a href="https://youtu.be/dQw4w9WgXcQ?feature=shared" target="_blank" class="codepen-button">
             <span>CLICK ME!</span>
         </a>
-    </div>
+    </div> 
+</div>
 
-    <label class="hamburger">
-        <input type="checkbox" id="hamburger-toggle">
-        <svg viewBox="0 0 32 32">
-            <path class="line line-top-bottom" d="M6 4L26 4C28.2 4 30 5.8 30 8C30 10.2 28.2 12 26 12L6 12C3.8 12 2 10.2 2 8C2 5.8 3.8 4 6 4ZM26 20L6 20C3.8 20 2 21.8 2 24C2 26.2 3.8 28 6 28L26 28C28.2 28 30 26.2 30 24C30 21.8 28.2 20 26 20Z"></path>
-            <path class="line" d="M7 16 27 16"></path>
+<!-- Hamburger Menu -->
+<label class="hamburger">
+    <input type="checkbox" id="hamburger-toggle">
+    <svg viewBox="0 0 32 32">
+        <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+        <path class="line" d="M7 16 27 16"></path>
+    </svg>
+</label>
+
+<!-- Dashboard Header -->
+<div class="dashboard-header">
+    <h1>codx</h1>
+</div>
+
+<!-- Dashboard Content -->
+<div class="dashboard-content" id="dashboard-content">
+    <h2>Dashboard</h2>
+    <p>This is the dashboard content. You can add more elements here.</p>
+</div>
+
+<!-- Back to Top Button -->
+<div class="button-top">
+    <button class="button">
+        <svg class="svgIcon" viewBox="0 0 384 512">
+            <path
+                d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
+            ></path>
         </svg>
-    </label>
-
-    <!-- Dashboard Header -->
-    <div class="dashboard-header">
-        <h1>codex</h1>
-    </div>
-
-    <!-- Dashboard Content -->
-    <div class="dashboard-content" id="dashboard-content">
-        <h2>Dashboard</h2>
-        <p>This is the dashboard content. You can add more elements here.</p>
-    </div>
-
-    <!-- Back to Top Button -->
-    <div class="button-top">
-        <button class="button">
-            <svg class="svgIcon" viewBox="0 0 384 512">
-                <path
-                    d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
-                ></path>
-            </svg>
-        </button>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="copyright">
-                &copy; 2024 Your Website Name. All rights reserved.
-            </div>
-            <div class="about">
-                <a href="about.html" style="color: white; text-decoration: none;">About Us</a>
-            </div>
-        </div>
-    </footer>
+    </button>
 </div>
 
 <script>
